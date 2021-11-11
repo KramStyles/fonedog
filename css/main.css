@@ -353,15 +353,21 @@ nav {
 .mention-box img {
     width: 100px;
 }
-
+/*DISPLAY FOR IPAD*/
 @media screen and (max-width: 1100px){
     .achieve{
         background-color: darkred;
     }
 }
-
+/*DISPLAY FOR MOBILE PHONES*/
 @media screen and (max-width: 500px){
     .achieve{
         background-color: black;
+    }
+    .mention-box, .three-boxes, .two-boxes, .most-views, .achieve-box{
+        display: block;
+    }
+    .product-slide, .two-boxes, .three-boxes{
+        display: none;
     }
 }
