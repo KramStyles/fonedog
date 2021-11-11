@@ -354,7 +354,7 @@ nav {
 .mention-box img {
     width: 100px;
 }
-.mobile-nav{
+.mobile-nav, .small-menus{
     display: none;
 }
 /*DISPLAY FOR IPAD*/
@@ -397,5 +397,28 @@ nav {
     }
     .mobile-nav span{
         font-size: 1.5em;
+    }
+
+    .small-menus{
+        background-color: #29465C;
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        top: 61px;
+    }
+    .small-menus a{
+        color: white;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        padding: 20px 10px;
+    }
+    .menu-holder:hover .small-menus{
+        display: block;
+    }
+    .bars{
+        height: 40px;
+        width: 40px;
+        background-color: black;
     }
 }
