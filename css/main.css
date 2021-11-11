@@ -421,4 +421,14 @@ nav {
         width: 40px;
         background-color: black;
     }
+    #small-search{
+        display: flex;
+        justify-content: space-between;
+    }
+    .small-div{
+        border-bottom: 1px solid white;
+        width: 90%;
+        margin: auto;
+        margin-bottom: 25px;
+    }
 }
