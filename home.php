@@ -28,7 +28,7 @@
                 <a href="">Products</a>
                 <a href="">Store</a>
                 <a href="">Resources</a>
-                <a href="./form.php">Support</a>
+                <a href="form.php">Support</a>
                 <a href="" id="small-search">Search <i class="fa fa-search"></i></a>
                 <div class="small-div"></div>
             </div>
@@ -43,7 +43,7 @@
                 <a href="#">Product <i class="fa fa-angle-down"></i></a>
                 <a href="#">Store</a>
                 <a href="#">Resources</a>
-                <a href="./form.php">Form</a>
+                <a href="form.php">Form</a>
                 <a href="#"><i class="fa fa-search"></i></a>
             </div>
         </nav>
