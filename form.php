@@ -1,5 +1,5 @@
 <?php
-    $fname = $password = $country = $subject = $errormsg = '...';
+    $fname = $password = $country = $subject = $errormsg = $classname = '...';
 
     if(isset($_POST['btnSubmit'])){
         $fname = $_POST['fullname'];
@@ -12,11 +12,16 @@
             $errormsg = "<div class='error-msg'>Please fill all fields</div>";
         } else if (strlen($password) < 6){
             $errormsg = "<div class='error-msg'>Password is too short</div>";
-        } else if ($password != $confirm){
+        }
+        else if(ctype_lower($password)){
+            $errormsg = "<div class='error-msg'>Password should contain at least one Uppercase</div>";
+        }
+        else if ($password != $confirm){
             $errormsg = "<div class='error-msg'>Passwords don't match</div>";
         }
         else{
-            $errormsg = "<div class='error-msg'>Congratulations!</div>";
+            $classname = "iyke";
+            $errormsg = "<div class='error-msg'>Congratulations</div>";
         }
 
     }
@@ -85,6 +90,7 @@
         table {
             border-collapse: collapse;
             width: 100%;
+            display: none;
         }
 
         th, td {
@@ -107,6 +113,9 @@
             padding: 10px;
             border: 2px solid darkred;
             border-radius: 10px;
+        }
+        .iyke{
+            display: block;
         }
 
         /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
@@ -179,7 +188,7 @@
 </div>
 
 
-<table>
+<table class="<?php echo $classname?>">
     <tr>
         <th>Fullname</th>
         <th>Password</th>
