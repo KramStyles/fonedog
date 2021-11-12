@@ -1,3 +1,27 @@
+<?php
+    $fname = $password = $country = $subject = $errormsg = '...';
+
+    if(isset($_POST['btnSubmit'])){
+        $fname = $_POST['fullname'];
+        $password = $_POST['password'];
+        $confirm = $_POST['confirm_password'];
+        $country = $_POST['country'];
+        $subject = $_POST['subject'];
+
+        if($fname == '' or $password == '' or $confirm == '' or $country == '' or $subject == ""){
+            $errormsg = "<div class='error-msg'>Please fill all fields</div>";
+        } else if (strlen($password) < 6){
+            $errormsg = "<div class='error-msg'>Password is too short</div>";
+        } else if ($password != $confirm){
+            $errormsg = "<div class='error-msg'>Passwords don't match</div>";
+        }
+        else{
+            $errormsg = "<div class='error-msg'>Congratulations!</div>";
+        }
+
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +30,7 @@
             box-sizing: border-box;
         }
 
-        input[type=text], select, textarea {
+        input[type=text], select, textarea, input[type=password] {
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
@@ -58,6 +82,33 @@
             clear: both;
         }
 
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .error-msg{
+            background-color: tomato;
+            color: white;
+            font-weight: bold;
+            font-family: Montserrat;
+            text-align: center;
+            padding: 10px;
+            border: 2px solid darkred;
+            border-radius: 10px;
+        }
+
         /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
         @media screen and (max-width: 600px) {
             .col-25, .col-75, input[type=submit] {
@@ -65,6 +116,8 @@
                 margin-top: 0;
             }
         }
+
+
     </style>
 </head>
 <body>
@@ -73,21 +126,29 @@
 <p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p>
 
 <div class="container">
-    <form action="https://www.w3schools.com/action_page.php">
+    <form action="" method="post">
         <div class="row">
             <div class="col-25">
                 <label for="fname">First Name</label>
             </div>
             <div class="col-75">
-                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                <input type="text" id="fname" name="fullname" placeholder="Your name..">
             </div>
         </div>
         <div class="row">
             <div class="col-25">
-                <label for="lname">Last Name</label>
+                <label for="lname">Password</label>
             </div>
             <div class="col-75">
-                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                <input type="password" id="lname" name="password" placeholder="Enter Password">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="cpass">Confirm Password</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="lname" name="confirm_password" placeholder="Confirm your password">
             </div>
         </div>
         <div class="row">
@@ -96,6 +157,7 @@
             </div>
             <div class="col-75">
                 <select id="country" name="country">
+                    <option value="">Pick one country</option>
                     <option value="australia">Australia</option>
                     <option value="canada">Canada</option>
                     <option value="usa">USA</option>
@@ -111,10 +173,27 @@
             </div>
         </div>
         <div class="row">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" name="btnSubmit">
         </div>
     </form>
 </div>
+
+
+<table>
+    <tr>
+        <th>Fullname</th>
+        <th>Password</th>
+        <th>Country</th>
+        <th>Subject</th>
+    </tr>
+    <tr>
+        <td><?php echo $fname; ?></td>
+        <td><?php echo $password; ?></td>
+        <td><?= $country; ?></td>
+        <td><?= $subject; ?></td>
+    </tr>
+</table>
+<?= $errormsg; ?>
 
 </body>
 
