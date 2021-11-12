@@ -79,6 +79,9 @@
             width: 75%;
             margin-top: 6px;
         }
+        .hide{
+            display: none;
+        }
 
         /* Clear floats after the columns */
         .row:after {
@@ -90,7 +93,6 @@
         table {
             border-collapse: collapse;
             width: 100%;
-            display: none;
         }
 
         th, td {
@@ -187,21 +189,23 @@
     </form>
 </div>
 
+<div class="hide <?php echo $classname?>">
+    <table>
+        <tr>
+            <th>Fullname</th>
+            <th>Password</th>
+            <th>Country</th>
+            <th>Subject</th>
+        </tr>
+        <tr>
+            <td><?php echo $fname; ?></td>
+            <td><?php echo $password; ?></td>
+            <td><?= $country; ?></td>
+            <td><?= $subject; ?></td>
+        </tr>
+    </table>
+</div>
 
-<table class="<?php echo $classname?>">
-    <tr>
-        <th>Fullname</th>
-        <th>Password</th>
-        <th>Country</th>
-        <th>Subject</th>
-    </tr>
-    <tr>
-        <td><?php echo $fname; ?></td>
-        <td><?php echo $password; ?></td>
-        <td><?= $country; ?></td>
-        <td><?= $subject; ?></td>
-    </tr>
-</table>
 <?= $errormsg; ?>
 
 </body>
