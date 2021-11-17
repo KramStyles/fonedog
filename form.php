@@ -137,7 +137,7 @@
 <p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p>
 
 <div class="container">
-    <form action="" method="post">
+    <form action="information.php" method="post">
         <div class="row">
             <div class="col-25">
                 <label for="fname">First Name</label>
