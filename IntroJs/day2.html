@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulating HTML & CSS with JS</title>
+    <link rel="stylesheet" href="../Font%20Awesome/css/all.min.css">
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container{
+          width: 30%;
+          padding: 10px;
+          display: flex;
+          justify-content: space-around;
+          margin: auto;
+      }
+      .myicon{
+          text-align: center;
+          font-size: 200%;
+          margin-top: 15px;
+          color: tomato;
+      }
+      button{
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.5em;
+            font-family: Montserrat;
+            cursor: pointer;
+      }
+      button:active{
+          background-color: tomato;
+          color: white;
+      }
+    </style>
+</head>
+<body>
+    <div class="myicon">
+        <i class="fa fa-smile-beam fa-5x"></i>
+    </div>
+
+    <div class="container">
+        <button id="btnWink" class="chelsey" name="tc">Wink</button>
+        <button id="btnSad">Sad</button>
+        <button id="btnMeh">Meh</button>
+        <button id="btnDefault">Default</button>
+    </div>
+
+<script>
+    var btnWink = document.getElementById('btnWink');
+</script>
+</body>
+</html>
