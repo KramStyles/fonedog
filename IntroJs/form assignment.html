@@ -48,6 +48,17 @@
         input:focus{
             outline: none;
         }
+        .left, .right{
+            width: 48%;
+            float: left;
+            margin: 10px 0;
+        }
+        .right{
+            float: right;
+        }
+        hr{
+            clear: both;
+        }
 
     </style>
 </head>
@@ -56,6 +67,20 @@
         <header>Registration Form</header>
         <form>
             <input type="text" name="fullname" placeholder="Full Names">
+            <div class="left">
+                <input type="text" name="fullname" placeholder="Full Names">
+            </div>
+            <div class="right">
+                <input type="text" name="fullname" placeholder="Full Names">
+            </div>
+            <hr>
+            <div class="left">
+                Bunch of Radio buttons
+            </div>
+            <div class="right">
+                Bunch of check boxes
+            </div>
+            <hr>
         </form>
     </div>
 </body>
