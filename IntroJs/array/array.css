@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 70%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.myicon{
+    text-align: center;
+    font-size: 200%;
+    margin-top: 15px;
+    color: tomato;
+}
+button{
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-family: Montserrat;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+}
+button:active{
+    background-color: tomato;
+    color: white;
+}

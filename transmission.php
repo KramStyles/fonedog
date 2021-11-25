@@ -48,15 +48,23 @@
             width: 20%;
         }
         .slide-down{
-            background-image: linear-gradient(to bottom, #0f3c6e, #0A1F2E 150px);
+            background-image: linear-gradient(to bottom, transparent, #0A1F2E 190px);
             height: 100%;
             padding: 50px;
             width: 100%;
             border-radius: 25px;
             position: absolute;
-            top: 0;
+            top: -100%;
             left: 0;
-            /*display: none;*/
+            visibility: hidden;
+            transform: scale(1,0);
+        }
+
+        .children:hover .slide-down{
+            transition: 0.2s ease all;
+            visibility: revert;
+            transform: scale(1,1);
+            top: 0;
         }
 
     </style>
